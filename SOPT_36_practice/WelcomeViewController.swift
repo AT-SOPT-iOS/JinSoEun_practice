@@ -36,6 +36,7 @@ class WelcomeViewController: UIViewController {
         button.backgroundColor = UIColor(red:255/255, green: 111/255, blue: 15/255, alpha: 1)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        button.layer.cornerRadius = 6
         button.addTarget(self, action: #selector(mainButtonDidTap), for: .touchUpInside)
         return button
     }()
@@ -46,6 +47,7 @@ class WelcomeViewController: UIViewController {
         button.backgroundColor = UIColor(red:221/255, green: 222/255, blue: 227/255, alpha: 1)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        button.layer.cornerRadius = 6
         button.addTarget(self, action: #selector(backToLoginButtonDidTap), for: .touchUpInside)
         return button
     }()

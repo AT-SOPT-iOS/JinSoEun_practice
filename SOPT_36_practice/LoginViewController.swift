@@ -36,6 +36,7 @@ class LoginViewController: UIViewController {
         
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 23, height: 0))
         textField.leftViewMode = .always
+        textField.layer.cornerRadius = 3
         return textField
     }()
     
@@ -46,6 +47,7 @@ class LoginViewController: UIViewController {
         textField.backgroundColor = UIColor(red: 221/255, green: 222/255, blue:227/255, alpha: 1)
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 23, height: 0))
         textField.leftViewMode = .always
+        textField.layer.cornerRadius = 3
         return textField
     }()
     
@@ -55,6 +57,7 @@ class LoginViewController: UIViewController {
         button.setTitle("로그인하기", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        button.layer.cornerRadius = 6
         button.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
         return button
     }()
