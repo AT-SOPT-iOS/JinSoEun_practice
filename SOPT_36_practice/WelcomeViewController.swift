@@ -9,15 +9,10 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
+    var id: String?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = .white
-        self.view.addSubview(iconImage)
-        self.view.addSubview(welcomeLable)
-        self.view.addSubview(mainButton)
-        self.view.addSubview(backToLoginButton)
-        
+    private func bindID() {
+        self.welcomeLable.text = "\(id!)님\n반가워요!"
     }
     
     let iconImage: UIImageView = {
@@ -28,7 +23,6 @@ class WelcomeViewController: UIViewController {
     
     let welcomeLable: UILabel = {
         let label = UILabel(frame: CGRect(x: 140, y: 295, width: 95, height: 60))
-        label.text = "???님\n반가워요!"
         label.textColor = .black
         label.numberOfLines = 2
         label.textAlignment = .center
@@ -69,4 +63,16 @@ class WelcomeViewController: UIViewController {
     private func mainButtonDidTap() {
         //
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = .white
+        self.view.addSubview(iconImage)
+        self.view.addSubview(welcomeLable)
+        self.view.addSubview(mainButton)
+        self.view.addSubview(backToLoginButton)
+        
+        bindID()
+    }
+
 }
