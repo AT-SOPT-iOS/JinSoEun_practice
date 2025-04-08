@@ -44,14 +44,27 @@ class LoginViewController: UIViewController {
         return textField
     }()
     
-    let loginButton: UIButton = {
+    lazy var loginButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 20, y: 422, width: 335, height: 57))
         button.backgroundColor = UIColor(red: 255/255, green: 111/255, blue: 15/255, alpha: 1)
         button.setTitle("로그인하기", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        button.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
         return button
     }()
+    
+    
+    private func pushToWelcomeVC() {
+        let welcomeViewController = WelcomeViewController()
+        self.navigationController?.pushViewController(welcomeViewController, animated: true)
+    }
+    
+    @objc
+    private func loginButtonDidTap() {
+        pushToWelcomeVC()
+    }
+    
         
     
     
