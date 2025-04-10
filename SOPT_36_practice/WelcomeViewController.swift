@@ -17,7 +17,7 @@ class WelcomeViewController: UIViewController {
     
     let iconImage: UIImageView = {
         let image = UIImageView(frame: CGRect(x:112, y: 87, width: 150, height: 150))
-        image.image = UIImage(named: "karrot_icon")
+        image.image = .karrotIcon
         return image
     }()
     
