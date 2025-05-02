@@ -46,7 +46,7 @@ class ItemViewController: UIViewController {
         
         collectionView.snp.makeConstraints{
             $0.top.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
-            $0.height.equalTo(calculateCellHeight())
+            $0.bottom.equalToSuperview()
         }
     }
     
