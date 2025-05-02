@@ -28,6 +28,11 @@ extension ChatModel {
             ChatModel(profileImg: .profile8, name: "임재현", place: "태국", message: "뒷풀이갈게", itemImg: .product8),
             ChatModel(profileImg: .profile2, name: "이은지", place: "명왕성", message: "은지야술먹자", itemImg: .product1),
             ChatModel(profileImg: .profile3, name: "성현주", place: "안드로메다", message: "응애~", itemImg: .product2),
+            ChatModel(profileImg: .profile2, name: "김한열", place: "뭘보슈", message: "생일추카해한열오빠", itemImg: .product1),
+            ChatModel(profileImg: .profile7, name: "서상원", place: "일본", message: "잠실의주인은두산이다", itemImg: .product7),
+            ChatModel(profileImg: .profile8, name: "임재현", place: "태국", message: "뒷풀이갈게", itemImg: .product8),
+            ChatModel(profileImg: .profile2, name: "이은지", place: "명왕성", message: "은지야술먹자", itemImg: .product1),
+            ChatModel(profileImg: .profile3, name: "성현주", place: "안드로메다", message: "응애~", itemImg: .product2),
             ChatModel(profileImg: .profile2, name: "김한열", place: "뭘보슈", message: "생일추카해한열오빠", itemImg: .product1)
         ]
     }
