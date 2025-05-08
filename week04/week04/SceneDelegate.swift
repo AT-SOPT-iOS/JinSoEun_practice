@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  week3
+//  week04
 //
-//  Created by 쏘 on 5/2/25.
+//  Created by 쏘 on 5/3/25.
 //
 
 import UIKit
@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = ItemViewController()
+        window.rootViewController = SignupViewController()
         window.makeKeyAndVisible()
         self.window = window
     }
