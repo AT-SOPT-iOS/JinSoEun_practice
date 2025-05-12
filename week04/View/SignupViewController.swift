@@ -7,6 +7,7 @@
 
 
 import UIKit
+
 import SnapKit
 import Then
 
@@ -22,10 +23,10 @@ final class SignupViewController: UIViewController {
         setLayout()
     }
     
-        @objc private func infoViewButtonTap() {
-            let infoVC = InfoViewController()
-            self.present(infoVC, animated: true)
-        }
+    @objc private func infoViewButtonTap() {
+        let infoVC = InfoViewController()
+        self.present(infoVC, animated: true)
+    }
     
     
     @objc private func textFieldDidEditing(_ textField: UITextField) {
@@ -42,9 +43,10 @@ final class SignupViewController: UIViewController {
     @objc private func registerButtonTap() {
         Task {
             do {
-                let response = try await RegisterService.shared.PostRegisterData(loginId: self.loginId,
-                                                                                 password: self.password,
-                                                                                 nickName: self.nickName)
+                let response = try await RegisterService.shared.PostRegisterData(
+                    loginId: self.loginId,
+                    password: self.password,
+                    nickName: self.nickName)
                 
                 let alert = UIAlertController(
                     title: "계정 생성 성공",
@@ -70,6 +72,14 @@ final class SignupViewController: UIViewController {
         }
     }
     
+    @objc private func loginButtonTap() {
+        Task {
+            do {
+                let loginVC = LoginViewController()
+                present(loginVC, animated: true, completion: nil)
+            }
+        }
+    }
     
     
     private func setLayout() {
@@ -81,10 +91,11 @@ final class SignupViewController: UIViewController {
             $0.top.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(200)
         }
         
-        [idTextField, passwordTextField, nickNameTextField, registerButton, infoViewButton].forEach {
+        [idTextField, passwordTextField, nickNameTextField, registerButton, infoViewButton, loginButton].forEach {
             self.stackView.addArrangedSubview($0)
         }
     }
+    
     private let stackView = UIStackView().then {
         $0.axis = .vertical
         $0.distribution = .equalSpacing
@@ -122,12 +133,26 @@ final class SignupViewController: UIViewController {
         $0.addTarget(self, action: #selector(registerButtonTap), for: .touchUpInside)
     }
     
-        private lazy var infoViewButton = UIButton().then {
-            $0.addTarget(self,
-                         action: #selector(infoViewButtonTap),
-                         for: .touchUpInside)
-            $0.backgroundColor = .blue
-            $0.setTitle("회원정보 조회", for: .normal)
-            $0.titleLabel?.textColor = .white
-        }
+    private lazy var infoViewButton = UIButton().then {
+        $0.addTarget(self,
+                     action: #selector(infoViewButtonTap),
+                     for: .touchUpInside)
+        $0.backgroundColor = .blue
+        $0.setTitle("회원정보 조회", for: .normal)
+        $0.titleLabel?.textColor = .white
+    }
+    
+    private lazy var loginButton = UIButton().then {
+        $0.addTarget(self,
+                     action: #selector(loginButtonTap),
+                     for: .touchUpInside)
+        $0.backgroundColor = .blue
+        $0.setTitle("로그인", for: .normal)
+        $0.titleLabel?.textColor = .white
+    }
+}
+
+
+#Preview {
+    SignupViewController()
 }

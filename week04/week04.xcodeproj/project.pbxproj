@@ -34,6 +34,11 @@
 			path = week04;
 			sourceTree = "<group>";
 		};
+		B07C34182DCDF6AB00183CA0 /* View */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +57,9 @@
 		B0037BEE2DC5E31F008A502A = {
 			isa = PBXGroup;
 			children = (
-				B0037BF92DC5E320008A502A /* week04 */,
 				B0037BF82DC5E320008A502A /* Products */,
+				B0037BF92DC5E320008A502A /* week04 */,
+				B07C34182DCDF6AB00183CA0 /* View */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +88,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				B0037BF92DC5E320008A502A /* week04 */,
+				B07C34182DCDF6AB00183CA0 /* View */,
 			);
 			name = week04;
 			packageProductDependencies = (
