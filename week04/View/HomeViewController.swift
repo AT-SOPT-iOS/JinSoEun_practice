@@ -21,11 +21,11 @@ class HomeViewController: UIViewController {
     
     private func setLayout() {
         let label = UILabel()
+        let changeNicknameButton = UIButton()
         
-        view.addSubview(label)
         
-        label.snp.makeConstraints {
-            $0.center.equalToSuperview()
+        [label, changeNicknameButton].forEach {
+            view.addSubview($0)
         }
         
         label.do {
@@ -34,6 +34,31 @@ class HomeViewController: UIViewController {
             $0.numberOfLines = 1
         }
         
+        changeNicknameButton.do {
+            $0.addTarget(self, action: #selector(changeNicknameButtonTap), for: .touchUpInside)
+            $0.setTitle("닉네임 변경", for: .normal)
+            $0.backgroundColor = .blue
+        }
         
+        label.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
+        
+        changeNicknameButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview().offset(100)
+            $0.centerX.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(40)
+            $0.height.equalTo(50)
+        }
+
+    }
+    
+    @objc private func changeNicknameButtonTap() {
+        Task {
+            do {
+                let changeNicknameVC = ChangeNicknameViewController()
+                present(changeNicknameVC, animated: true, completion: nil)
+            }
+        }
     }
 }

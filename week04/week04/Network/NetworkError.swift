@@ -11,9 +11,11 @@ enum NetworkError: Int, Error, CustomStringConvertible {
     case responseDecodingError
     case responseError
     case unknownError
+    case invalidUserId
     case loginFailed = 400
     case internalServerError = 500
     case notFoundError = 404
+    
     
     var errorDescription: String {
         switch self {
@@ -24,6 +26,7 @@ enum NetworkError: Int, Error, CustomStringConvertible {
         case .unknownError: return "UNKNOWN_ERROR"
         case .internalServerError: return "500:INTERNAL_SERVER_ERROR"
         case .notFoundError: return "404:NOT_FOUND_ERROR"
+        case .invalidUserId: return "INVALID_USER_ID"
         }
     }
 }

@@ -59,6 +59,7 @@ class LoginService {
         }
         do {
             let decode = try JSONDecoder().decode(LoginResponseWrapper.self, from: data)
+            UserDefaults.standard.set(decode.data.userId, forKey: "userId")
             return decode.data
         } catch {
             throw error
