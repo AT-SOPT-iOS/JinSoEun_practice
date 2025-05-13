@@ -15,8 +15,25 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .blue
+        setLayout()
+        view.backgroundColor = .white
+    }
+    
+    private func setLayout() {
+        let label = UILabel()
         
-        title = "Home"
+        view.addSubview(label)
+        
+        label.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
+        
+        label.do {
+            $0.text = "로그인 완료"
+            $0.textAlignment = .center
+            $0.numberOfLines = 1
+        }
+        
+        
     }
 }
